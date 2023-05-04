@@ -1,8 +1,8 @@
 const cardpokemon = document.querySelector("#cardpokemon")
-const pokefind = document.querySelector("#pokefind")
+
 
 const limit1 = 1
-let id = 1;
+let id = (document.cookie.split('=')[1])-1;
 
 function convertPokemonToLi(pokemon) {
     return `

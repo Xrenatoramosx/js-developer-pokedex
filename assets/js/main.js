@@ -1,6 +1,9 @@
 const pokemonList = document.getElementById('pokemonList')
 const loadMoreButton = document.getElementById('loadMoreButton')
 
+function escolhidoPokemon(number){
+    document.cookie = `nome=${number}; expires=data; path=/`;
+}
 
 const maxRecords = 151
 const limit = 10
@@ -17,7 +20,7 @@ function convertPokemonToLi(pokemon) {
                     ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
                 </ol>
                 <a href ="pokemon.html" class="pokemonbt">
-                <button id=pokefind type="button">
+                <button onclick="escolhidoPokemon(${pokemon.number})" type="button">
                 <img src="${pokemon.photo}"
                          alt="${pokemon.name}">
                 </button>
